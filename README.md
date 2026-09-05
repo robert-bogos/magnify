@@ -4,8 +4,13 @@
 
 A magnifying glass that follows your cursor anywhere on macOS.
 
+To install, run this in your terminal:
 ```sh
-brew trust robert-bogos/magnify && brew install robert-bogos/magnify/magnify
+brew trust robert-bogos/magnify && brew install robert-bogos/magnify/
+```
+To use, run this in your terminal:
+```sh
+magnify
 ```
 
 A system-wide magnifying glass for macOS. Launch it from the terminal and a square
