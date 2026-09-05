@@ -14,6 +14,9 @@ To use, run this in your terminal:
 magnify
 ```
 
+<img width="1038" height="534" alt="Screenshot 2026-09-05 at 22 40 54" src="https://github.com/user-attachments/assets/bfe7ce2d-5ed9-453f-bbcf-90d5d7e993b9" />
+
+
 ## Requirements
 
 - macOS 13+ (Apple Silicon).
