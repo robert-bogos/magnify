@@ -3,6 +3,7 @@
 ## TL;DR
 
 A magnifying glass that follows your cursor anywhere on macOS.
+Perfect if you need to pinpoint stuff while screen sharing.
 
 To install, run this in your terminal:
 ```sh
@@ -12,11 +13,6 @@ To use, run this in your terminal:
 ```sh
 magnify
 ```
-
-A system-wide magnifying glass for macOS. Launch it from the terminal and a square
-lens follows your cursor, showing a live, zoomed view of whatever is underneath —
-any app, the desktop, the menu bar, on any display.
-Works perfectly if you need to pinpoint stuff while screen sharing.
 
 ## Requirements
 
