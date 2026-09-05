@@ -3,6 +3,7 @@
 A system-wide magnifying glass for macOS. Launch it from the terminal and a square
 lens follows your cursor, showing a live, zoomed view of whatever is underneath —
 any app, the desktop, the menu bar, on any display.
+Works perfectly if you need to pinpoint stuff while screen sharing.
 
 ## Requirements
 
