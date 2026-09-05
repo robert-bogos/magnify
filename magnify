@@ -14,7 +14,13 @@ done
 DIR="$(cd -P "$(dirname "$SOURCE")" >/dev/null 2>&1 && pwd)"
 APP="$DIR/Magnify.app"
 if [ ! -d "$APP" ]; then
-    echo "Magnify.app not built yet — run ./scripts/build.sh first." >&2
+    # Not built locally next to this script — fall back to a Homebrew-cask
+    # install, where Magnify.app lives in /Applications and this wrapper is
+    # symlinked separately into bin.
+    APP="/Applications/Magnify.app"
+fi
+if [ ! -d "$APP" ]; then
+    echo "Magnify.app not found — run ./scripts/build.sh, or install via Homebrew." >&2
     exit 1
 fi
 open -n "$APP" --args "$@"
