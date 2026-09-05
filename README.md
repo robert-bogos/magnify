@@ -11,7 +11,32 @@ Works perfectly if you need to pinpoint stuff while screen sharing.
 - Xcode **not** required — builds with Command Line Tools using `swiftc`.
   (`swift build` / `swift test` need full Xcode; the scripts below use `swiftc`.)
 
-## Build
+## Install
+
+```sh
+brew tap robert-bogos/magnify
+brew install --cask magnify
+```
+
+First install from this tap will show:
+```
+Error: Refusing to load cask ... from untrusted tap robert-bogos/magnify.
+```
+This is expected — Homebrew requires explicitly trusting third-party taps
+before running their install scripts. Trust it once:
+```sh
+brew trust robert-bogos/magnify
+```
+then re-run `brew install --cask magnify`.
+
+Magnify is ad-hoc signed, not notarized by Apple — the cask automatically
+clears the Gatekeeper quarantine flag on install, so no separate "right-click
+▸ Open" workaround is needed. You'll still need to grant Screen Recording
+permission on first launch (see below).
+
+Upgrade later with `brew upgrade --cask magnify`.
+
+## Build from source
 
 ```sh
 ./scripts/build.sh
@@ -108,4 +133,3 @@ is installed.
   stops honoring the old grant. Reset it and grant once more:
   `tccutil reset ScreenCapture com.rbogos.magnify`, then run `./magnify` again.
   (You only hit this if you rebuild; a build-once install grants once and stays put.)
-```
