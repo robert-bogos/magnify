@@ -7,7 +7,7 @@ Perfect if you need to pinpoint stuff while screen sharing.
 
 To install, run this in your terminal:
 ```sh
-brew trust robert-bogos/magnify && brew install robert-bogos/magnify/
+brew trust robert-bogos/magnify && brew install robert-bogos/magnify/magnify
 ```
 To use, run this in your terminal:
 ```sh
