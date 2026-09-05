@@ -1,5 +1,13 @@
 # magnify
 
+## TL;DR
+
+A magnifying glass that follows your cursor anywhere on macOS.
+
+```sh
+brew trust robert-bogos/magnify && brew install robert-bogos/magnify/magnify
+```
+
 A system-wide magnifying glass for macOS. Launch it from the terminal and a square
 lens follows your cursor, showing a live, zoomed view of whatever is underneath —
 any app, the desktop, the menu bar, on any display.
@@ -14,20 +22,13 @@ Works perfectly if you need to pinpoint stuff while screen sharing.
 ## Install
 
 ```sh
-brew tap robert-bogos/magnify
-brew install --cask magnify
+brew trust robert-bogos/magnify && brew install robert-bogos/magnify/magnify
 ```
 
-First install from this tap will show:
-```
-Error: Refusing to load cask ... from untrusted tap robert-bogos/magnify.
-```
-This is expected — Homebrew requires explicitly trusting third-party taps
-before running their install scripts. Trust it once:
-```sh
-brew trust robert-bogos/magnify
-```
-then re-run `brew install --cask magnify`.
+The `trust` step is a one-time grant Homebrew requires for third-party taps
+(this repo isn't in Homebrew's official cask index) — doing it first means
+`install` taps and installs in one shot instead of failing and asking you to
+retry.
 
 Magnify is ad-hoc signed, not notarized by Apple — the cask automatically
 clears the Gatekeeper quarantine flag on install, so no separate "right-click
