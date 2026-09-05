@@ -1,0 +1,4 @@
+.build/
+Magnify.app/
+.DS_Store
+*.tar.gz

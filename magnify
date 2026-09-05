@@ -1,0 +1,21 @@
+#!/bin/bash
+# Launches Magnify.app via LaunchServices so it gets its OWN identity in the
+# Screen Recording / Accessibility lists (running the raw binary from a shell
+# attributes those requests to your terminal app instead). Quit from the 🔍
+# menu-bar icon, or `killall magnify`.
+# Resolve this script's real path, following symlinks, so it works when
+# symlinked onto $PATH (e.g. ~/.local/bin/magnify -> this file).
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do
+    DIR="$(cd -P "$(dirname "$SOURCE")" >/dev/null 2>&1 && pwd)"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+DIR="$(cd -P "$(dirname "$SOURCE")" >/dev/null 2>&1 && pwd)"
+APP="$DIR/Magnify.app"
+if [ ! -d "$APP" ]; then
+    echo "Magnify.app not built yet — run ./scripts/build.sh first." >&2
+    exit 1
+fi
+open -n "$APP" --args "$@"
+echo "Launched Magnify. Quit via the 🔍 menu-bar icon (or: killall magnify)."
